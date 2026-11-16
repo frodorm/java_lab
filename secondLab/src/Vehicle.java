@@ -2,13 +2,13 @@ public abstract class Vehicle {
     private String model;
     private String brand;
     private int year;
-    private Fuel fuel;
+    private Engine engine;
 
-    public Vehicle(String model, String brand, int year, String recomendedFuelBrand, String fuelType) {
+    public Vehicle(String model, String brand, int year, String power, String type) {
         this.model = model;
         this.brand = brand;
         this.year = year;
-        this.fuel = new Fuel(recomendedFuelBrand, fuelType);
+        this.engine = new Engine(power, type);
     }
 
     public String getModel() {
@@ -23,31 +23,31 @@ public abstract class Vehicle {
         return year;
     }
 
-    public Fuel getFuel() {
-        return fuel;
+    public Engine getEngine() {
+        return engine;
     }
 
     public final void getInfo() {
-        System.out.println(brand + " " + model + " " + year + " " + fuel.getFuelType());
+        System.out.println(brand + " " + model + " " + year + " " + engine.getType());
     }
 
     public abstract void move();
 
-    public class Fuel {
-        private String fuelBrand;
-        private String fuelType;
+    public class Engine {
+        private String type;
+        private String power;
 
-        public Fuel(String fuelBrand, String fuelType) {
-            this.fuelBrand = fuelBrand;
-            this.fuelType = fuelType;
+        public Engine(String type, String power) {
+            this.type = type;
+            this.power = power;
         }
 
-        public String getFuelType() {
-            return fuelType;
+        public String getType() {
+            return type;
         }
 
-        public String getFuelBrand() {
-            return fuelBrand;
+        public String getPower() {
+            return power;
         }
     }
 }

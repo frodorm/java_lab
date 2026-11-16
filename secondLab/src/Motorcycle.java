@@ -2,8 +2,8 @@ public class Motorcycle extends Vehicle {
     private boolean hasSideсar;
 
     public Motorcycle(boolean hasSideсar, String model, String brand, int year,
-                      String recomendedFuelBrand, String fuelType) {
-        super(model, brand, year, recomendedFuelBrand, fuelType);
+                      String power, String type) {
+        super(model, brand, year, power, type);
         this.hasSideсar = hasSideсar;
     }
 
