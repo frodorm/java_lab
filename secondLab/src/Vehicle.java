@@ -4,7 +4,7 @@ public abstract class Vehicle {
     private int year;
     private Engine engine;
 
-    public Vehicle(String model, String brand, int year, String power, String type) {
+    public Vehicle(String model, String brand, int year, int power, String type) {
         this.model = model;
         this.brand = brand;
         this.year = year;
@@ -29,15 +29,15 @@ public abstract class Vehicle {
 
     public final void getInfo() {
         System.out.println(brand + " " + model + " " + year + " " + engine.getType());
-    }
+    } // файнал запрещает переопределять метод в наследниках, если объявить класс файнал тогда от него нельзя наследоваться
 
     public abstract void move();
 
     public class Engine {
         private String type;
-        private String power;
+        private int power;
 
-        public Engine(String type, String power) {
+        public Engine(int power, String type) {
             this.type = type;
             this.power = power;
         }
@@ -46,7 +46,7 @@ public abstract class Vehicle {
             return type;
         }
 
-        public String getPower() {
+        public int getPower() {
             return power;
         }
     }

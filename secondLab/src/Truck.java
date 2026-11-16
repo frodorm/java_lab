@@ -2,8 +2,8 @@ public class Truck extends Vehicle {
     private double maxLoad; // тонн
 
     public Truck(double maxLoad,  String model, String brand, int year,
-                 String power, String type) {
-        super(brand, model, year, power, type);
+                 int power, String type) {
+        super(model, brand, year, power, type);
         this.maxLoad = maxLoad;
     }
 
