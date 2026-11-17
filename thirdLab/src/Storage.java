@@ -13,7 +13,7 @@ public class Storage<T> {
     public void add(T value) {
         checkValue(value);
         if (storage.length == size) {
-            throw new IllegalStateException();
+            throw new IllegalStateException("Переполнились");
         }
         storage[size] = value;
         size++;
@@ -43,13 +43,13 @@ public class Storage<T> {
 
     private void checkValue(T value) {
         if (value == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("нелегальный аргумент");
         }
     }
 
     private void checkIndex(int index) {
         if (index > size - 1 || index < 0) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("индекс аут оф баунд");
         }
     }
 
