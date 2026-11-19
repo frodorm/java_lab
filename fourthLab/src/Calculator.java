@@ -34,7 +34,7 @@ public class Calculator<T extends Number> {
         return add() / 2.0;
     }
 
-    public <N extends Number> double square(N value) {
+    public static <N extends Number> double square(N value) {
         if (value == null) {
             throw new IllegalArgumentException("нельзя");
         }
